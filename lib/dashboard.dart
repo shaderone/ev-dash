@@ -1,8 +1,10 @@
+import 'package:car_dashbord/components/gears.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'dart:ui' as ui;
 
-import 'components/car_indicators.dart';
+//import 'components/car_indicators.dart';
 import 'components/current_speed.dart';
 import 'components/gear_battery.dart';
 import 'components/time_and_temp.dart';
@@ -46,7 +48,7 @@ class _DashboardState extends State<Dashboard> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             // crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              TimeAndTemp(constraints: constraints),
+                              BatteryInfo(constraints: constraints),
                               Expanded(
                                 child: Stack(
                                   fit: StackFit.expand,
@@ -54,7 +56,8 @@ class _DashboardState extends State<Dashboard> {
                                     Column(
                                       children: [
                                         const SizedBox(height: 20),
-                                        const CarIndicators(),
+                                        //const CarIndicators(),
+                                        const Gears(),
                                         const Spacer(),
                                         const CurrentSpeed(speed: 54),
                                         const Spacer(),
@@ -68,7 +71,8 @@ class _DashboardState extends State<Dashboard> {
                                             Padding(
                                               padding: const EdgeInsets.only(left: 8),
                                               child: Text(
-                                                "100 km/H",
+                                                //"100 km/H",
+                                                "4000 RPM",
                                                 style: Theme.of(context).textTheme.titleMedium!.copyWith(color: const Color(0xFF6B4339)),
                                               ),
                                             )

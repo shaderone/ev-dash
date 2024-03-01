@@ -26,24 +26,27 @@ class GearAndBattery extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Gears(),
-                  Text.rich(
-                    TextSpan(
-                      text: "Rest. ",
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white.withOpacity(0.16),
-                      ),
-                      children: const [
-                        TextSpan(
-                          text: "465km",
-                          style: TextStyle(
-                            color: Color(0xFF77C000),
-                          ),
-                        ),
-                      ],
-                    ),
+                  //const Gears(),
+                  Gears(
+                    gears: [1, 2, 3].map((e) => e.toString()).toList(),
                   ),
+                  //Text.rich(
+                  //  TextSpan(
+                  //    text: "Rest. ",
+                  //    style: TextStyle(
+                  //      fontSize: 16,
+                  //      color: Colors.white.withOpacity(0.16),
+                  //    ),
+                  //    children: const [
+                  //      TextSpan(
+                  //        text: "465km",
+                  //        style: TextStyle(
+                  //          color: Color(0xFF77C000),
+                  //        ),
+                  //      ),
+                  //    ],
+                  //  ),
+                  //),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: SizedBox(
@@ -51,7 +54,7 @@ class GearAndBattery extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            "E",
+                            "SOC",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w500,
@@ -97,18 +100,37 @@ class GearAndBattery extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(width: gearConstraints.maxWidth * 0.025),
+                    //Text(
+                    //  "Avg. ",
+                    //  style: TextStyle(
+                    //    fontSize: 16,
+                    //    color: Colors.white.withOpacity(0.16),
+                    //  ),
+                    //),
                     Text(
-                      "Avg. ",
+                      //"11.3 w/km",
+                      "T",
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.white.withOpacity(0.16),
+                        color: Colors.red.withOpacity(0.32),
                       ),
                     ),
-                    Text(
-                      "11.3 w/km",
+                    SizedBox(width: gearConstraints.maxWidth * 0.025),
+                    const Text(
+                      //"11.3 w/km",
+                      "S",
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.white.withOpacity(0.32),
+                        color: Colors.green,
+                      ),
+                    ),
+                    SizedBox(width: gearConstraints.maxWidth * 0.025),
+                    Text(
+                      //"11.3 w/km",
+                      "A",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.red.withOpacity(0.32),
                       ),
                     ),
                   ],
@@ -125,14 +147,16 @@ class GearAndBattery extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "ODO. ",
+                      //"ODO. ",
+                      "Throttle: ",
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white.withOpacity(0.16),
                       ),
                     ),
                     Text(
-                      "6666.6km",
+                      //"6666.6km",
+                      "50%",
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white.withOpacity(0.32),
